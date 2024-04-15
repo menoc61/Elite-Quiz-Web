@@ -1,0 +1,114 @@
+@use "../../common/breakpoints" as *;
+@use "../../common/mixin" as *;
+@use "../../common/color" as *;
+
+.randomplayer {
+    .inner_Screen {
+        display: flex;
+        align-items: center;
+        // justify-content: space-between;
+        margin: 50px auto;
+        flex-wrap: wrap;
+
+        .vs_image {
+            margin: 0 20px;
+
+            img {
+                width: 40px;
+            }
+        }
+    }
+
+    .user_profile {
+        text-align: center;
+        position: relative;
+
+        img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            border-radius: 50px;
+        }
+    }
+
+    .opponent_image {
+        text-align: center;
+
+        img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            border-radius: 50px;
+        }
+    }
+}
+
+.groupbattle {
+    .user_profile {
+        img {
+            height: 100px;
+            width: 100px;
+            object-fit: contain;
+            border-radius: 50px;
+        }
+    }
+
+    .user_data {
+        .opponent_image {
+            img {
+                height: 100px;
+                width: 100px;
+                object-fit: contain;
+                border-radius: 50px;
+            }
+        }
+    }
+}
+
+.dashboard {
+    .whitebackground {
+        .inner__headerdash {
+            &.groupPlay_header {
+                justify-content: space-between !important;
+
+                @media #{$large-device} {
+                    flex-direction: column;
+                    justify-content: center !important;
+                }
+            }
+        }
+    }
+}
+
+.groupPlay_header {
+    .total__out__leveldata {
+        top: 0;
+    }
+
+    .total__out__leveldata {
+        @media #{$large-device} {
+            top: 30px;
+        }
+    }
+}
+
+.dashboard {
+    .whitebackground {
+        .groupPlay_header {
+            .inner__headerdash_data {
+                position: relative;
+                left: 50%;
+
+                @media #{$large-device} {
+                    left: auto;
+                }
+            }
+        }
+    }
+}
+
+.groupbattle {
+    .user_data {
+        justify-content: space-evenly !important;
+    }
+}

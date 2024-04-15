@@ -1,0 +1,84 @@
+@use "./breakpoints" as *;
+@use "./mixin" as *;
+@use "./color" as *;
+@use "./font-size" as *;
+
+.breadcrumb__wrapper {
+  margin: 0px 0 20px 0;
+  overflow: hidden;
+
+  @media #{$large-device} {
+    margin-top: 50px;
+  }
+  .Breadcrumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+    margin-bottom: 30px;
+    background-color: $breadcrumbs-color;
+
+    .page-title {
+      .title {
+        color: $white;
+        text-align: center;
+        text-transform: uppercase;
+
+        @media #{$large-device} {
+          font-size: inherit;
+        }
+      }
+    }
+    .breadcrumb__inner {
+      .breadcrumb {
+        padding: 10px 0;
+        background-color: transparent;
+        margin-bottom: 0;
+
+        @media #{$large-device} {
+          padding: 7px 0;
+        }
+        .parent__link {
+          a {
+            color: $themecolor;
+            position: relative;
+            display: block;
+            font-weight: 600;
+            @media #{$large-device} {
+              font-size: inherit;
+            }
+
+            &:hover {
+              color: $themecolor;
+
+              &::before {
+                left: 0;
+                width: 100%;
+              }
+            }
+          }
+        }
+        .current {
+          color: $white;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 1.5;
+          display: flex;
+          @media #{$large-device} {
+            font-size: inherit;
+          }
+
+          &::before {
+            margin: 0 15px;
+            font-size: 16px;
+            content: "/";
+            font-family: $font-family-icons;
+            color: $white;
+            margin-top: 2px;
+          }
+        }
+      }
+    }
+  }
+}

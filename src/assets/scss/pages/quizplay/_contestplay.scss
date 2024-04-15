@@ -1,0 +1,164 @@
+@use "../../common/breakpoints" as *;
+@use "../../common/mixin" as *;
+@use "../../common/color" as *;
+
+.contestPlay {
+    display: flex;
+    color: $white;
+
+    .morphisam {
+        border-radius: 46px;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+        background-color: #fff;
+        padding: 30px;
+        position: relative;
+
+        @media #{$small-device} {
+            padding: 15px;
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            width: 95%;
+            height: 30px;
+            bottom: -5px;
+            z-index: -1;
+            background-color: $mate-black;
+            border-radius: 30px;
+            left: 0;
+            right: 0;
+            margin: auto;
+
+            @media #{$small-device} {
+                width: 80%;
+            }
+        }
+    }
+
+    .nav-link {
+        &.active {
+            border-radius: 0;
+            border: none;
+            outline: none;
+            color: $white;
+            box-shadow: 0 0 10px 0 rgb(0 0 0 / 16%);
+            background-image: linear-gradient(93deg, $gradient-one 0%, $gradient-two 100%) !important;
+        }
+    }
+
+    .nav-tabs {
+        border-bottom: 1px solid #dddddd26;
+        button {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 10px 0 rgb(0 0 0 / 16%);
+            background-color: #fafafa;
+            color: $mate-black;
+        }
+    }
+
+    .card {
+        border-radius: 15px;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(30px);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
+        margin-bottom: 15px;
+
+        .card-image {
+            img {
+                aspect-ratio: 1/1;
+                object-fit: cover;
+                display: flex;
+                margin: auto;
+                border-radius: 15px;
+                max-width: 100%;
+            }
+        }
+        .card-details {
+            .card-title {
+                padding-top: 10px;
+                h3 {
+                    font-size: 18px;
+                    color: $mate-black;
+                }
+                p {
+                    color: $mate-black;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                }
+            }
+            .card-footer {
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+
+                p {
+                    color: $mate-black;
+                    margin-bottom: 5px;
+                }
+                span {
+                    color: $mate-black;
+                }
+
+                .btn-play {
+                    background-image: linear-gradient(93deg, $gradient-one 0%, $gradient-two 100%) !important;
+                    color: $white;
+                    margin-bottom: 0;
+                }
+
+                .upper-footer {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding-bottom: 15px;
+                }
+
+                .bottom-footer {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+
+.contestque {
+    .inner__headerdash {
+        justify-content: center;
+        flex-direction: column;
+
+        .total__out__leveldata {
+            position: relative;
+            right: auto;
+            margin-top: 20px;
+
+            @media #{$extra-small-device} {
+                margin-top: 0;
+            }
+        }
+
+        .coinsdata {
+            @media #{$extra-small-device} {
+                margin: 40px auto;
+            }
+        }
+
+        .bookmark_btn {
+            position: absolute;
+            right: 0px;
+            top: 19px;
+
+            @media #{$extra-small-device} {
+                position: relative;
+                margin-top: 0px;
+                top: 0;
+            }
+        }
+    }
+}

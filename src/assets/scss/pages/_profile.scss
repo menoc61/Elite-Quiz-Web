@@ -1,0 +1,406 @@
+@use "../common/breakpoints" as *;
+@use "../common/mixin" as *;
+@use "../common/color" as *;
+
+.Profile__Sec {
+  padding-bottom: 100px;
+  @include flex-center;
+  // height: 100vh;
+  // padding-top: 200px;
+  width: 100%;
+
+  #friends_code{
+    margin-bottom: 30px;
+  }
+
+  .btn {
+    letter-spacing: 1px;
+    margin: 0px 0 30px 0;
+
+    @media #{$large-device} {
+      margin-top: 10px;
+    }
+  }
+
+  .morphism {
+    border-radius: 46px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #fff;
+    padding: 30px;
+    position: relative;
+
+    @media #{$small-device} {
+      padding: 15px;
+    }
+
+
+    .card {
+      background-color: transparent;
+      border: transparent;
+    }
+
+    .main__profile {
+      height: 100%;
+      flex-direction: column;
+
+
+      @media #{$max-wid-device} {
+        margin: 10px auto;
+      }
+
+      @media #{$extra-small-device} {
+        padding-top: 0 !important;
+      }
+
+      .prop__image {
+        width: 120px;
+        height: 120px;
+        @include flex-center;
+        background: #f9f9f9;
+        border-radius: 100%;
+        border: 2px solid #efefef;
+        position: relative;
+        padding: 5px;
+
+        img {
+          max-width: 100%;
+          max-height: 100%;
+          // object-fit: contain;
+          border-radius: 100%;
+          margin: auto;
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          // border: 1px solid red;
+          overflow: hidden;
+        }
+
+        .select__profile {
+          display: block;
+
+          [type="file"] {
+            height: 0;
+            overflow: hidden;
+            width: 0;
+            float: left;
+
+            + label {
+              cursor: pointer;
+              outline: none;
+              @include normal-transition;
+              vertical-align: middle;
+              margin: 0;
+              position: absolute;
+              bottom: 20px;
+              right: -6px;
+              background: $themecolor;
+              color: $white;
+              height: 35px;
+              width: 35px;
+              border-radius: 100%;
+              border: 1px solid $white;
+              font-size: 0.75rem;
+              @include flex-center;
+
+              em {
+                font-size: 16px;
+                @include flex-center;
+                margin: auto;
+              }
+            }
+          }
+        }
+      }
+
+      .prop__title {
+        display: flex;
+        padding-top: 20px;
+
+        h3 {
+          color: $themecolor;
+          font-weight: 600;
+          letter-spacing: 1px;
+        }
+      }
+
+      .mobile__number {
+        display: flex;
+        color: $white;
+        padding-top: 5px;
+        margin-bottom: 10px;
+
+        span {
+          display: flex;
+          color: $themecolor;
+
+          i {
+            @include flex-center;
+            margin-right: 10px;
+          }
+          p {
+            @extend strong;
+            letter-spacing: 1px;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    .email__id {
+      @extend .mobile__number;
+      padding-top: 0px !important;
+
+      span {
+        display: flex;
+
+        strong {
+          letter-spacing: 1px;
+        }
+        p {
+          @extend strong;
+        }
+      }
+    }
+
+    .bottom__card_sec {
+      display: flex;
+
+      @media #{$max-wid-device} {
+        padding: 10px !important;
+      }
+
+      label {
+        width: 100%;
+        position: relative;
+        @include flex-center;
+        overflow: hidden;
+        color: #888888;
+        input {
+          width: 400px;
+          max-width: 100%;
+          font-size: 14px;
+          font-weight: 400;
+          padding: 10px 15px 10px 60px;
+          position: relative;
+          height: 40px;
+          border-radius: 5px;
+          border: none;
+          background: #e1e5e8;
+          transition: color 0.3s ease-out;
+          outline: none;
+          letter-spacing: 1px;
+          color: #000;
+          @media #{$large-device} {
+            margin-bottom: 10px;
+            width: 100%;
+            display: block;
+          }
+        }
+
+        i {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+
+          backdrop-filter: blur(10px);
+          box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+          background: $themecolor;
+          color: $white;
+          padding: 5px 15px;
+          height: 40px;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          overflow: hidden;
+        }
+      }
+
+      .bottom__profile_card {
+        text-align: center;
+
+        .common_content {
+          @include flex-center;
+          margin-bottom: 30px;
+
+          @media #{$large-device} {
+            margin-bottom: 10px;
+          }
+
+          a {
+            @include glassmorphism-effect;
+            box-shadow: 0 1px 9px 0 rgba(31, 38, 135, 0.37);
+            padding: 12px 15px;
+            width: 100%;
+            color: $mate-black;
+            position: relative;
+            border: none;
+
+            i {
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              background: $themecolor;
+              color: $white;
+              padding: 5px 15px;
+              height: 48px;
+              border-top-left-radius: 5px;
+              border-bottom-left-radius: 5px;
+              overflow: hidden;
+            }
+          }
+        }
+      }
+    }
+
+    .bottom_line {
+      color: #767272;
+    }
+  }
+
+  .quiz_details {
+    border: 1px solid #dedede3d;
+    padding: 15px;
+    border-radius: 5px;
+    position: relative;
+
+    .quiz_details_title {
+      color: $mate-black;
+      text-align: center;
+      padding-bottom: 0;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    .quiz_details_inner {
+      list-style-type: none;
+      padding: 5px;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $mate-black;
+
+        .custom_badge {
+          background-color: $themecolor;
+          color: $white;
+          width: 40px;
+          height: 30px;
+          margin-bottom: 5px;
+          @include flex-center;
+        }
+      }
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 95%;
+      height: 30px;
+      bottom: -6px;
+      z-index: -1;
+      background-color: #212121;
+      border-radius: 30px;
+    }
+  }
+
+  .questions_details {
+    @extend .quiz_details;
+    padding: 15px;
+
+    .questions_details_title {
+      @extend .quiz_details_title;
+    }
+
+    .questions_details_inner {
+      @extend .quiz_details_inner;
+
+      li {
+        @extend li;
+      }
+    }
+  }
+
+  .quiz_details {
+    margin-top: 50px;
+
+    @media #{$extra-small-device} {
+      margin-top: 15px;
+      margin-bottom: 0;
+    }
+  }
+
+  .botton_card_details {
+    margin: auto 0;
+
+    @media #{$small-device} {
+      > div {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+  // profile images
+  .image_section{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    img{
+      aspect-ratio: 1/1;
+      cursor: pointer;
+    }
+  }
+
+  .statistics_badges{
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    align-items: center;
+
+    .view_all{
+      font-size: small;
+    }
+  }
+
+}
+
+.mobile::-webkit-outer-spin-button,
+.mobile::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.mobile[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.pro-card {
+  &::after {
+    position: absolute;
+    content: "";
+    width: 95%;
+    height: 30px;
+    bottom: -35px;
+    z-index: -1;
+    background-color: #212121;
+    border-radius: 48px;
+    margin: auto;
+    right: 0;
+    left: 0;
+
+    @media #{$small-device} {
+      width: 80%;
+      bottom: -20px;
+    }
+  }
+}

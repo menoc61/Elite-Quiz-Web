@@ -1,0 +1,35 @@
+// Breakpoints
+
+$extraBig-device: "only screen and (min-width: 1400px) and (max-width: 1899px)";
+
+$laptop-device: "only screen and (min-width: 1200px) and (max-width: 1399px)";
+
+$desktop-device: "only screen and (min-width: 992px) and (max-width: 1199px)";
+
+$tablet-device: "only screen and (min-width: 768px) and (max-width: 991px)";
+
+$large-device: "only screen and (max-width: 767px)";
+
+$intermediate-device: "only screen and (min-width:576px) and (max-width:767px)";
+
+$small-device: "only screen and (max-width: 575px)";
+
+$extra-small-device: "only screen and (max-width: 479px)";
+
+$max-wid-device: "only screen and (max-width: 991px)";
+
+$custom-max-1399-device: "only screen and (max-width: 1399px)";
+
+$min-1400-device: "(min-width: 1400px)";
+
+$min-1200-device: "(min-width: 1200px)";
+
+$min-992-device: "(min-width: 992px)";
+
+$min-768-device: "(min-width: 768px)";
+
+$min-576-device: "(min-width: 576px)";
+
+$very-small-device: "(max-width:350px)";
+
+$max-width-1199-device: "(max-width:1199px)";

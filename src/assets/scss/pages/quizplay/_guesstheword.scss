@@ -1,0 +1,560 @@
+@use "../../common/breakpoints" as *;
+@use "../../common/mixin" as *;
+@use "../../common/color" as *;
+
+.Guesstheword {
+    display: flex;
+    color: $white;
+
+    .morphisam {
+        border-radius: 46px;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+        background-color: #fff;
+        padding: 30px;
+        position: relative;
+
+        @media #{$small-device} {
+            padding: 15px;
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            width: 95%;
+            height: 30px;
+            bottom: -5px;
+            z-index: -1;
+            background-color: $mate-black;
+            border-radius: 30px;
+            left: 0;
+            right: 0;
+            margin: auto;
+
+            @media #{$small-device} {
+                width: 80%;
+            }
+        }
+    }
+
+    .quiz__logo {
+        @include flex-center;
+        margin: auto;
+    }
+
+    .left-sec {
+        .bottom__left {
+            display: block;
+
+            .cat__Box {
+                display: flex;
+                flex-direction: row;
+                position: relative;
+                margin-bottom: 40px;
+
+                .left-line {
+                    border: 1px solid rgb(179, 179, 179);
+                    margin: auto;
+                    display: block;
+                    width: 50px;
+                    align-items: center;
+                    justify-content: center;
+                    line-height: 2px;
+                }
+
+                .quizplay__title {
+                    margin: auto 10px;
+                    font-size: 1.25rem;
+                    @media #{$large-device} {
+                        font-size: inherit;
+                    }
+                }
+
+                .right-line {
+                    border: 1px solid rgb(179, 179, 179);
+                    margin: auto;
+                    width: 50px;
+                    @include flex-center;
+                    line-height: 2px;
+                }
+            }
+
+            .bottom__cat__box {
+                display: flex;
+
+                .inner__Cat__box {
+                    width: 100%;
+                    height: 405px;
+                    overflow-y: auto;
+                    list-style-type: none;
+                    text-decoration: none;
+                    padding-left: 0;
+                    position: relative;
+
+                    @media (max-width: 991px) {
+                        height: auto;
+                    }
+
+                    @media (max-width: 575px) {
+                        height: auto;
+                    }
+
+                    &::-webkit-scrollbar {
+                        width: 5px;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        border-radius: 10px;
+                        background-color: $mate-black;
+                    }
+
+                    .button {
+                        display: flex;
+                        border-radius: 15px;
+                        align-items: center;
+                        position: relative;
+                        text-align: center;
+                        margin-bottom: 10px;
+                        // background-color: #5f5f5f;
+
+                        &:hover {
+                            &::after {
+                                cursor: pointer;
+                                transition: all 1s ease-in-out;
+                                width: 100%;
+                            }
+                        }
+
+                        .active {
+                            border: 10px;
+                        }
+                        .button.active-one {
+                            &::after {
+                                height: 100px !important;
+                            }
+                        }
+                    }
+
+                    .Box__icon {
+                        margin-left: 10px;
+                        @include flex-center;
+                        z-index: 1;
+                        color: $white;
+
+                        img {
+                            width: 30px;
+                            height: 30px;
+                            max-width: 100%;
+                            max-height: 100%;
+                            border-radius: 5px;
+                        }
+                    }
+
+                    .Box__text {
+                        margin-left: 20px;
+                        text-align: center;
+                        @include flex-center;
+                        padding-top: 15px;
+                        @include flex-center;
+                        z-index: 1;
+                    }
+
+                    li {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    // subcatslider
+    .subcat__slider__context {
+        display: block;
+        position: relative;
+
+        .inner__icon {
+            @include flex-center;
+            margin: auto;
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 2px;
+            display: inline-block;
+            background-color: grey;
+        }
+
+        .cat__Box {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+
+            .left-line {
+                border: 1px solid rgb(179, 179, 179);
+                margin: auto;
+                display: block;
+                width: 30%;
+                align-items: center;
+                justify-content: center;
+                line-height: 2px;
+            }
+
+            .quizplay__title {
+                margin: auto 10px;
+            }
+
+            .right-line {
+                border: 1px solid rgb(179, 179, 179);
+                margin: auto;
+                @include flex-center;
+                width: 30%;
+                line-height: 2px;
+            }
+
+            .subcat__p {
+                font-size: 1.25rem;
+                display: block;
+                margin: 5px auto;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+
+                @media #{$large-device} {
+                    font-size: inherit;
+                }
+            }
+        }
+
+        .quizplay-slider {
+            padding: 20px 0px;
+            position: relative;
+
+            .subcatintro__sec {
+                margin: 30px auto;
+                .card {
+                    height: 100px;
+                    border-radius: 25px;
+                    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
+                    background-color: #fafafa;
+                    cursor: pointer;
+
+                    .card__name {
+                        p:first-child {
+                            font-size: 1rem;
+                            font-weight: 800;
+                            padding-bottom: 7px;
+                        }
+                        p {
+                            font-size: 0.825rem;
+                            font-weight: 500;
+                            letter-spacing: 1px;
+                        }
+                    }
+
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        background-color: $mate-black;
+                        width: 100%;
+                        height: 57px;
+                        z-index: -1;
+                        margin-top: 47px;
+                        border-radius: 30px;
+                    }
+                }
+            }
+
+            .no_sub_data {
+                position: absolute;
+                top: 0%;
+                left: 0;
+                right: 0;
+                @include flex-center;
+            }
+
+            .swiper-button-next {
+                right: -20px;
+                color: $white;
+                background-image: linear-gradient(93deg, $gradient-one 0%, $gradient-two 100%) !important;
+                padding: 0px 23px;
+                border-radius: 50%;
+                opacity: 1;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $themecolor !important;
+                    overflow: hidden;
+
+                    &::after {
+                        animation: moveoutright 1s linear;
+                    }
+
+                    @keyframes moveoutright {
+                        0% {
+                            transform: translateX(0);
+                        }
+                        100% {
+                            transform: translateX(100px);
+                        }
+                    }
+                }
+            }
+
+            .swiper-button-prev {
+                left: -20px;
+                color: $white;
+                background-image: linear-gradient(93deg, $gradient-one 0%, $gradient-two 100%) !important;
+                padding: 0px 23px;
+                border-radius: 50%;
+                opacity: 1;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $themecolor !important;
+                    overflow: hidden;
+
+                    &::after {
+                        animation: moveoutleft 1s linear;
+                    }
+
+                    @keyframes moveoutleft {
+                        0% {
+                            transform: translateX(0);
+                        }
+                        100% {
+                            transform: translateX(-100px);
+                        }
+                    }
+                }
+            }
+        }
+
+        .sub_cat_title {
+            @include flex-center;
+        }
+
+        .active-one {
+            color: $white;
+            background-color: $themecolor !important;
+
+            p {
+                color: $white;
+            }
+        }
+
+        .unactive-one {
+            color: $mate-black;
+        }
+    }
+
+    // level
+
+    .right__bottom {
+        &.cat__Box {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+
+            h6 {
+                font-size: 1.25rem;
+
+                @media #{$large-device} {
+                    font-size: inherit;
+                }
+            }
+        }
+
+        .left-line,
+        .right-line {
+            border: 1px solid rgb(179, 179, 179);
+            margin: auto;
+
+            width: 30%;
+            @include flex-center;
+            line-height: 2px;
+            display: block;
+            align-items: center;
+            justify-content: center;
+            line-height: 2px;
+        }
+    }
+
+    .unlock__levels__card {
+        position: relative;
+        top: 0;
+        left: 0;
+
+        .card {
+            height: 85px;
+            border-radius: 25px;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
+            background-color: #fafafa;
+            @include flex-center;
+            flex-direction: column;
+            cursor: pointer;
+            position: relative;
+
+            .bubble-aprox {
+                right: 100%;
+                bottom: 100%;
+                width: 100%;
+                height: 100%;
+                background-color: $primarybtn;
+                transition: all 0.3s;
+                border-bottom-right-radius: 10%;
+                position: absolute;
+            }
+
+            &:hover {
+                .bubble-aprox {
+                    transition: all 0.3s;
+                    right: 0;
+                    bottom: 0;
+                }
+            }
+
+            .questions {
+                .inner_que {
+                    padding-left: 5px;
+                }
+            }
+
+            .level__icon {
+                color: $mate-black;
+
+                &.open_lock {
+                    color: $themecolor;
+                }
+            }
+
+            &::after {
+                position: absolute;
+                content: "";
+                background-color: $mate-black;
+                width: 100%;
+                height: 57px;
+                z-index: -1;
+                margin-top: 33px;
+                border-radius: 30px;
+            }
+        }
+    }
+
+    .card__name {
+        p {
+            color: $mate-black;
+        }
+    }
+
+}
+
+.guess_the_word_comp {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    input {
+        background-color: #e3e3e3;
+        border-radius: 5px;
+        height: 40px;
+        margin-bottom: 10px;
+        text-align: center;
+        position: relative;
+        width: 300px;
+        margin-right: 20px;
+        // outline: none;
+        border: #e3e3e3;
+    }
+    .button_area {
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style-type: none;
+            flex-wrap: wrap;
+            padding-left: 0;
+            margin-bottom: 0;
+
+            li {
+                margin-right: 20px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .bottom_button {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 60%;
+        justify-content: space-evenly;
+    }
+
+    .custom_input {
+        width: 50px;
+    }
+
+    .input_box {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.setNoFound {
+    background-color: #656565;
+    color: #fff;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+    border-radius: 10px;
+    flex-direction: column;
+
+    .nobtn {
+        color: #fff;
+        background-color: $themecolor;
+    }
+}
+
+.guessthewordque {
+    .inner__headerdash {
+        justify-content: space-between !important;
+
+        @media #{$extra-small-device} {
+            margin: 20px auto;
+        }
+    }
+    .total__out__leveldata {
+        position: relative !important;
+        right: auto !important;
+        top: 0;
+
+        @media #{$extra-small-device} {
+            position: relative;
+            margin-top: 0px;
+        }
+    }
+
+
+    .content__text {
+        p {
+            @media #{$extra-small-device} {
+                margin-top: 0px !important;
+            }
+
+        }
+    }
+
+    .bookmark_btn {
+        position: relative;
+        top: 0;
+        right: 0;
+    }
+}

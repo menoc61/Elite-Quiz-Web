@@ -1,0 +1,215 @@
+@use "../common/breakpoints" as *;
+@use "../common/mixin" as *;
+@use "../common/color" as *;
+
+/* login form */
+.loginform {
+  .inner__login__img {
+    height: 100%;
+    position: relative;
+    flex-direction: column;
+    margin: auto;
+    @include flex-center;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: 350px;
+      @include flex-center;
+    }
+  }
+
+  .morphisam {
+    border-radius: 46px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #fff;
+    padding: 30px;
+    position: relative;
+
+    @media #{$small-device} {
+      padding: 15px;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 95%;
+      height: 30px;
+      bottom: -5px;
+      z-index: -1;
+      background-color: $mate-black;
+      border-radius: 30px;
+      left: 0;
+      right: 0;
+      margin: auto;
+
+      @media #{$small-device} {
+        width: 80%;
+      }
+    }
+  }
+
+  .border-line {
+    position: relative;
+    @include flex-center;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 15%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 80%;
+      width: 2px;
+      background-color: hsla(0, 0%, 100%, 0.1803921568627451);
+      display: block;
+      border-radius: 20px;
+
+      @media #{$max-wid-device} {
+        display: none;
+      }
+    }
+  }
+
+  .react-tel-input {
+    padding: 0;
+    border: none;
+  }
+}
+
+.inner__login__form {
+  padding: 30px;
+
+  @media #{$large-device} {
+    padding: 30px 0;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  h3 {
+    color: $mate-black;
+    font-weight: 600;
+    font-size: 2.5rem;
+    text-align: center;
+
+    @media #{$small-device} {
+      font-size: 2rem;
+    }
+  }
+
+  input {
+    width: 100%;
+    border-radius: 5px;
+    background-color: #e1e5e8;
+    height: 40px !important;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 55px;
+  }
+
+  .social__icons {
+    ul {
+      @include flex-center;
+      cursor: pointer;
+
+      li {
+        display: flex;
+        align-items: center;
+        margin-right: 30px;
+
+        a {
+          &:hover {
+            color: $white;
+          }
+        }
+
+        .social__icons {
+          padding: 10px;
+          @include flex-center;
+          font-size: 2rem;
+          border-radius: 10px;
+          color: #ff4d41de;
+          border: none;
+        }
+        .facebook_icon svg path {
+          color: #3b5998;
+          fill: #3b5998;
+          background-image: linear-gradient(to bottom, transparent 20%, white 20%, white 93%, transparent 93%);
+          background-size: 55%;
+          background-position: 70% 0;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+
+  .sign__up {
+    flex-direction: column;
+    @include flex-center;
+    color: #748494;
+
+    span {
+      a {
+        color: $themecolor;
+      }
+    }
+  }
+
+  .send-button{
+    margin-top: 25px;
+  }
+}
+
+.loginform .inner__login__form .emailicon,
+.loginform .inner__login__form .emailicon2,
+.loginform .inner__login__form .nameicon {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 50px;
+  height: 39px;
+  text-align: center;
+  border-radius: 5px;
+  @include flex-center;
+  background-color: $themecolor;
+  color: $white;
+}
+
+.loginform .inner__login__form input[type="email"]::placeholder,
+.loginform .inner__login__form input[type="password"]::placeholder,
+.loginform .inner__login__form input[type="text"]::placeholder,
+.otpverify .inner__login__form input[type="text"]::placeholder {
+  /* Firefox, Chrome, Opera */
+  text-align: left;
+}
+
+.otpverify {
+  .inner__login__form {
+    .verify-code {
+      margin-right: 15px;
+    }
+  }
+}
+.otpverify {
+  .inner__login__form {
+    .backlogin {
+      margin-left: 15px;
+    }
+  }
+}
+
+.resetpassword {
+  a {
+    color: $themecolor;
+  }
+}

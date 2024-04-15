@@ -1,0 +1,165 @@
+@use "../../common/breakpoints" as *;
+@use "../../common/mixin" as *;
+@use "../../common/color" as *;
+
+.SelfLearning {
+    &.ExamModule {
+        .today_box {
+            background-color: $themecolor;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+
+            .today_upper,
+            .today_bottom {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            p {
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .nav-link {
+            color: $mate-black;
+            font-weight: 500;
+            letter-spacing: 1px;
+
+            &.active {
+                font-weight: 600;
+                color: $themecolor;
+            }
+        }
+
+        .exam_image {
+            img {
+                aspect-ratio: 1/1;
+                width: 100%;
+                height: 350px;
+            }
+        }
+
+        .error_content {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            top: 85px;
+
+            @media #{$large-device} {
+                top: 30px;
+            }
+
+            .error_img {
+                height: 100px;
+                aspect-ratio: 1/1;
+                width: 100%;
+            }
+
+            h6 {
+                color: $themecolor;
+            }
+        }
+    }
+}
+
+.completeDataModal {
+    border: 1px solid #8080801c;
+    padding: 10px;
+    border-radius: 15px;
+    .result_title {
+        text-align: center;
+        background-color: $themecolor;
+        border-radius: 10px 10px 0 0;
+        padding: 5px;
+        margin-bottom: 15px;
+
+        h3 {
+            color: #fff;
+            margin-bottom: 0;
+        }
+    }
+
+    .result_marks_data {
+        .inner_data {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            justify-content: space-between;
+            p {
+                margin-bottom: 0;
+            }
+
+            .result_Data {
+                border-radius: 50px;
+                background-color: $mate-black;
+                color: $themecolor;
+                padding: 10px;
+                margin-left: 10px;
+                width: 35%;
+                text-align: center;
+            }
+        }
+    }
+
+    .inner_total_data {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        background-color: #8080804d;
+        border-radius: 10px;
+        color: $themecolor;
+
+        &:last-of-type {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    .bottom_data {
+        background-color: $mate-black;
+        color: $themecolor;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .bottom_data_two {
+        background-color: green;
+        color: #fff;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .bottom_data_three {
+        background-color: orangered;
+        color: #fff;
+        border-radius: 10px 10px 0 0;
+    }
+}
+
+.exammodal{
+    &.custom_modal_notify{
+        &.self-modal {
+            .ant-modal-body {
+                height: 600px!important;
+                overflow-y: scroll!important;
+                @media #{$small-device} {
+                    padding: 27px 0 0 0;
+                }
+            }
+
+            .ant-modal-close {
+                top: 5px;
+                right: 10px;
+                @media #{$small-device} {
+                    top: 5px;
+                    right: 14px;
+                }
+            }
+        }
+    }
+
+}

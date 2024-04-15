@@ -1,0 +1,55 @@
+@use "../common/color" as *;
+
+// flex-center
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//header mobile menu before and after toggle
+@mixin header-toggle-before-after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex: 1 0 100%;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: $themecolor;
+}
+
+// header mobile menu icon before and after toggle
+@mixin header-toggle-icon-before-after {
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s;
+    transform: scaleX(1) translateZ(0);
+    transform-origin: right;
+}
+
+// common-transition
+@mixin common-transition {
+    -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+//glassmorphism effect
+@mixin glassmorphism-effect {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 7%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+//normal transition
+@mixin normal-transition {
+    transition: all 0.3s;
+}
+
+@mixin custom-btn {
+    padding: 12px 15px;
+    color: $white;
+    background-color: $themecolor;
+}

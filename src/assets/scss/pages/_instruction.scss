@@ -1,0 +1,49 @@
+@use "../common/breakpoints" as media;
+@use "../common/mixin" as *;
+@use "../common/color" as *;
+
+.Instruction {
+  padding-bottom: 50px;
+
+  @media #{media.$extra-small-device} {
+    margin-bottom: 30px;
+  }
+
+  &.wrapper {
+    padding-top: 0;
+  }
+  .morphisam {
+    @include glassmorphism-effect;
+    padding: 30px 15px;
+    position: relative;
+    background-color: #fff;
+    backdrop-filter: none;
+
+    @media #{media.$small-device} {
+      padding: 15px;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 95%;
+      height: 30px;
+      bottom: -7px;
+      z-index: -1;
+      background-color: #212121;
+      border-radius: 30px;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    p,
+    span {
+      color: $mate-black;
+
+      strong {
+        color: $themecolor;
+      }
+    }
+  }
+}

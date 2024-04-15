@@ -1,0 +1,139 @@
+@use "../common/breakpoints" as *;
+@use "../common/mixin" as *;
+@use "../common/color" as *;
+
+.coinhistory {
+    margin-bottom: 50px;
+    .morphisam {
+        border-radius: 46px;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+        background-color: #fff;
+        padding: 30px;
+        position: relative;
+
+        @media #{$small-device} {
+            padding: 15px;
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            width: 95%;
+            height: 30px;
+            bottom: -5px;
+            z-index: -1;
+            background-color: $mate-black;
+            border-radius: 30px;
+            left: 0;
+            right: 0;
+            margin: auto;
+
+            @media #{$small-device} {
+                width: 80%;
+            }
+        }
+    }
+
+    .coin_data {
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 25px;
+        border: 1px solid #0000001a;
+
+        .inner_data {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .title{
+                p{
+                    color: $mate-black;
+                }
+            }
+
+            .points {
+                background-color: #fff;
+                color: #000;
+                padding: 10px;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                p {
+                    margin-bottom: 0;
+                }
+
+                .minus {
+                    color: white;
+                    border-radius: 5px;
+                    background: red;
+                    width: 60px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .plus {
+                    color: white;
+                    border-radius: 5px;
+                    background: green;
+                    width: 60px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    li {
+        &.pagination__link--active {
+            a {
+                background-color: $themecolor;
+                color: #fff;
+
+                &:hover{
+                    color: #fff!important;
+                }
+            }
+        }
+        a {
+            position: relative;
+            display: block;
+            padding: 0px 15px;
+            text-align: center;
+            line-height: 45px;
+            margin: 0 5px;
+            color: #000;
+            background-color: #f7f8f9;
+            border: 1px solid #f7f8f9;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            -webkit-transition: all 0.5s ease-out 0s;
+            -moz-transition: all 0.5s ease-out 0s;
+            -ms-transition: all 0.5s ease-out 0s;
+            -o-transition: all 0.5s ease-out 0s;
+            transition: all 0.5s ease-out 0s;
+
+            &:hover{
+                color: #000!important;
+            }
+        }
+    }
+}
+
+.pagination__link--disabled a {
+    cursor: not-allowed;
+    background-color: #ebebe4 !important;
+    color: #c6c6c6;
+}

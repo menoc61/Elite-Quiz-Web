@@ -1,0 +1,72 @@
+@use "../common/breakpoints" as *;
+@use "../common/mixin" as *;
+@use "../common/color" as *;
+
+.Maintainance {
+    margin-bottom: 50px;
+
+    .container {
+        .row {
+            .morphisam {
+                border-radius: 46px;
+                box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+                background-color: #fff;
+                padding: 30px;
+                position: relative;
+
+                @media #{$small-device} {
+                    padding: 15px;
+                }
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 95%;
+                    height: 30px;
+                    bottom: -5px;
+                    z-index: -1;
+                    background-color: $mate-black;
+                    border-radius: 30px;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+
+                    @media #{$small-device} {
+                        width: 80%;
+                    }
+                }
+
+                .left_image {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        height: 300px;
+                        object-fit: contain;
+
+                        @media #{$large-device} {
+                            height: 200px;
+                        }
+                    }
+                }
+
+                .right_text {
+                    text-align: center;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    p {
+                        text-align: center;
+                        width: 70%;
+
+                        @media #{$large-device} {
+                            width: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,82 @@
+@use "../common/breakpoints" as *;
+@use "../common/mixin" as *;
+@use "../common/color" as *;
+
+.badges{
+    margin-bottom: 50px;
+    .badges_data{
+        text-align: center;
+        margin-bottom: 22px;
+        background-color: #fff;
+        border-radius: 10px;
+
+        .inner_image{
+            position: relative;
+            .dummy_background_color::before {
+                content: "\2B22";
+                color: $themecolor;
+                font-size:135px;
+                position: relative;
+            }
+            .dummy_background::before {
+                content: "\2B22";
+                color: grey;
+                font-size:135px;
+            }
+
+            img{
+                height: 75px;
+                object-fit: contain;
+                position: absolute;
+                right: 0;
+                left: 0;
+                margin: auto;
+                top: 15px;
+                bottom: 0;
+            }
+
+            .counter_badge{
+                position: absolute;
+                top: 60%;
+                right: 29%;
+                margin: auto;
+                background-color: #fff;
+                width: 30px;
+                height: 30px;
+                padding: 2px;
+                border-radius: 50px;
+                border: 1px solid grey;
+            }
+        }
+        p{
+            color:$mate-black;
+            padding-bottom: 20px;
+            font-weight: 600;
+        }
+    }
+
+    &.battle_statistics_badges{
+        .questions_details_inner{
+            display: flex;
+            align-items: center;
+
+            @media (max-width: 575px) {
+                flex-direction: column;
+            }
+        }
+
+        .badges_data{
+            .inner_image {
+                img {
+                    height: 30px;
+                    top: 5px;
+                }
+                .dummy_background_color{
+                    &::before{
+                        font-size: 65px;
+                    }
+                }
+            }
+        }
+    }
+}

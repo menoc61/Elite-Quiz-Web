@@ -1,0 +1,424 @@
+@use "../common/breakpoints" as *;
+@use "../common/mixin" as *;
+@use "../common/color" as *;
+
+.user_data {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+
+    &.onevsone {
+        justify-content: space-evenly !important;
+
+        @media (max-width: 575px) {
+            justify-content: flex-start !important;
+        }
+    }
+
+    .user_one {
+        display: flex;
+        align-items: center;
+    }
+
+    .user_two {
+        @extend .user_one;
+    }
+
+    .username {
+        p {
+            color: $mate-black;
+        }
+    }
+
+    .userpoints {
+        display: flex;
+        align-items: center;
+
+        p {
+            color: $mate-black;
+        }
+    }
+
+    .inner__headerdash {
+        border: 2px solid $themecolor;
+        border-radius: 50%;
+        margin-right: 10px;
+        padding-top: 0 !important;
+
+        .coinsdata {
+            width: 80px !important;
+            height: 80px !important;
+            .inner-coins__data {
+                &::before {
+                    box-shadow: none !important;
+                    border-radius: 0 !important;
+                }
+            }
+        }
+    }
+
+    .group_battle_loser {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        // width: 100%;
+
+        .group_data {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .group_screen {
+            img {
+                width: 50px !important;
+                margin: 0 20px;
+            }
+        }
+    }
+}
+
+.battlequiz {
+    .randomplayer {
+        .inner_Screen {
+            &.onevsonescreen {
+                justify-content: space-between;
+
+                @media (max-width: 575px) {
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+            .user_profile {
+                img {
+                    width: 150px;
+                    height: 150px;
+                    object-fit: contain;
+                    border-radius: 50px;
+                }
+            }
+
+            .opponent_image {
+                @media (max-width: 575px) {
+                    margin-top: 20px;
+                }
+                img {
+                    width: 150px;
+                    height: 150px;
+                    object-fit: contain;
+                    border-radius: 50px;
+                }
+            }
+
+            .vs_image {
+                img {
+                    width: 50px;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+    .ant-tabs > .ant-tabs-nav .ant-tabs-nav-list {
+        width: 100%;
+    }
+
+    .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+        color: #fff;
+    }
+
+    .ant-tabs-tab {
+        width: 50%;
+        margin: auto;
+        color: #000;
+        background-color: #fff;
+        display: block;
+        text-align: center;
+        border-top-right-radius: 10px;
+
+        &.ant-tabs-tab-active {
+            background-color: $themecolor;
+            border-top-right-radius: 0px;
+            border-top-left-radius: 10px;
+            color: #fff;
+        }
+    }
+
+    .ant-tabs-ink-bar {
+        background: #fff;
+    }
+
+    .ant-tabs {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding-bottom: 20px;
+    }
+
+    .ant-tabs-content {
+        padding-left: 20px;
+        padding-right: 15px;
+    }
+
+    .unactive-one {
+        border-radius: 5px;
+    }
+}
+
+.battlerandom {
+    .showscore-userprofile {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+    }
+
+    .user_data {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-wrap: wrap;
+
+        p {
+            color: $mate-black;
+            font-size: 24px;
+            @media (max-width: 575px) {
+                font-size: 18px;
+            }
+        }
+
+        .point_screen {
+            border: none;
+            border-radius: 0.5rem;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-align: center;
+            outline: none;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+            background-color: $themecolor;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            width: max-content;
+            justify-content: center;
+            margin: auto;
+        }
+
+        .group_result_point {
+            width: 100% !important;
+        }
+
+        .login_winner {
+            @media #{$extra-small-device} {
+                width: 100%;
+            }
+        }
+
+        .versus_screen {
+            img {
+                object-fit: contain;
+                width: 50px;
+                aspect-ratio: 1/1;
+                margin-right: 50px;
+
+                @media #{$small-device} {
+                    margin-right: 0px;
+                }
+            }
+
+            @media #{$extra-small-device} {
+                width: 100%;
+                margin: 20px 0 40px 0;
+            }
+        }
+
+        .opponet_loser {
+            @media #{$extra-small-device} {
+                width: 100%;
+            }
+        }
+
+        .group_data {
+            margin-right: 50px;
+
+            @media #{$large-device} {
+                margin-right: 20px;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        .login_winner {
+            margin-right: 50px;
+
+            @media #{$large-device} {
+                margin-right: 0px;
+            }
+        }
+    }
+
+    .result_data {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        p {
+            color: $mate-black;
+            font-size: 32px;
+        }
+
+        h3 {
+            color: $mate-black;
+            margin-bottom: 1rem;
+        }
+
+        .lost_coin {
+            font-size: 24px;
+        }
+    }
+}
+
+.retry-modal .ant-modal-body {
+    height: auto;
+    overflow-y: hidden;
+}
+
+.playwithfriend .ant-tabs-nav-list {
+    width: 100%;
+}
+
+.playwithfriend {
+    .ant-tabs-tab {
+        width: 50%;
+    }
+}
+
+.list-unstyled {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+
+    @media #{$max-width-1199-device} {
+        padding-bottom: 30px;
+    }
+
+    button {
+        width: 50px;
+    }
+    .active-one {
+        background: #313131!important;
+        color: #fff;
+        background-image: none !important;
+        box-shadow: none!important;
+    }
+
+    img {
+        position: absolute;
+        top: 30px;
+        width: 30px;
+        object-fit: contain;
+    }
+}
+
+.input_coins {
+    input {
+        height: 40px;
+        border-radius: 10px;
+        outline: none;
+        border: none;
+        padding-left: 10px;
+        text-align: center;
+        letter-spacing: 0.2rem;
+        background-color: #ddd;
+    }
+}
+
+.onevsoneimg {
+    object-fit: contain;
+    width: 100%;
+    height: 400px;
+}
+
+.random_fees,
+.random_current_coins {
+    width: 50%;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    p {
+        margin: 15px auto;
+        color: $mate-black;
+    }
+
+    @media #{$extra-small-device} {
+        width: 100%;
+    }
+}
+
+.random_fees {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.random_current_coins {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.join_input {
+    height: 40px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    padding-left: 10px;
+    text-align: center;
+    letter-spacing: 0.2rem;
+    background-color: #ddd;
+}
+
+.join_room_code input::-webkit-outer-spin-button,
+.join_room_code input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.input_coins input::-webkit-outer-spin-button,
+.input_coins input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.battlequestion {
+    .total__out__leveldata {
+        position: relative;
+        right: auto;
+    }
+
+    .content__text {
+        p {
+            margin-top: 60px;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .onevsonedetails {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
